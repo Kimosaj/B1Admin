@@ -3,5 +3,11 @@ build
 dist
 .git
 .env*
-.yarn
+
+# Exclude Yarn cache and other local Yarn files,
+# but include dependency patches required during installation.
+.yarn/*
+!.yarn/patches/
+!.yarn/patches/**
+
 public/apphelper
