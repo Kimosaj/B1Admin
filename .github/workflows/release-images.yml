@@ -1,4 +1,3 @@
-```yaml
 # Publishes the self-host images (b1-api, b1-admin, b1-app) to GHCR as one versioned bundle.
 # Run by hand: pick a version like 2026.10.1. Each image is tagged <version> and, when promote is on, stable.
 name: Release self-host images
@@ -138,4 +137,3 @@ jobs:
             --repo "${{ github.repository }}" --target "${{ github.sha }}" \
             --title "Self-host ${{ inputs.version }}" \
             --notes "Images: $NS/b1-api, b1-admin, b1-app tagged ${{ inputs.version }}$([ "${{ inputs.promote }}" = "true" ] && echo ' and stable'). Upgrade with: ./deploy/b1 upgrade ${{ inputs.version }}"
-```
