@@ -1,3 +1,4 @@
+```yaml
 # Publishes the self-host images (b1-api, b1-admin, b1-app) to GHCR as one versioned bundle.
 # Run by hand: pick a version like 2026.10.1. Each image is tagged <version> and, when promote is on, stable.
 name: Release self-host images
@@ -9,13 +10,13 @@ on:
         description: "Bundle version (e.g. 2026.10.1)"
         required: true
       api_ref:
-        description: "ChurchApps/Api git ref"
+        description: "Kimosaj/Api git ref"
         default: main
       b1app_ref:
-        description: "ChurchApps/B1App git ref"
+        description: "Kimosaj/B1App git ref"
         default: main
       b1admin_ref:
-        description: "ChurchApps/B1Admin git ref"
+        description: "Kimosaj/B1Admin git ref"
         default: main
       promote:
         description: "Also move the stable tag to this version"
@@ -50,22 +51,27 @@ jobs:
         id: src
         run: |
           case "${{ matrix.image }}" in
-            b1-api) echo "repo=ChurchApps/Api" >> $GITHUB_OUTPUT; echo "ref=${{ inputs.api_ref }}" >> $GITHUB_OUTPUT ;;
-            b1-admin) echo "repo=ChurchApps/B1Admin" >> $GITHUB_OUTPUT; echo "ref=${{ inputs.b1admin_ref }}" >> $GITHUB_OUTPUT ;;
-            b1-app) echo "repo=ChurchApps/B1App" >> $GITHUB_OUTPUT; echo "ref=${{ inputs.b1app_ref }}" >> $GITHUB_OUTPUT ;;
+            b1-api) echo "repo=Kimosaj/Api" >> $GITHUB_OUTPUT; echo "ref=${{ inputs.api_ref }}" >> $GITHUB_OUTPUT ;;
+            b1-admin) echo "repo=Kimosaj/B1Admin" >> $GITHUB_OUTPUT; echo "ref=${{ inputs.b1admin_ref }}" >> $GITHUB_OUTPUT ;;
+            b1-app) echo "repo=Kimosaj/B1App" >> $GITHUB_OUTPUT; echo "ref=${{ inputs.b1app_ref }}" >> $GITHUB_OUTPUT ;;
           esac
+
       - uses: actions/checkout@v4
         with:
           repository: ${{ steps.src.outputs.repo }}
           ref: ${{ steps.src.outputs.ref }}
+
       - name: Record commit
         run: mkdir -p /tmp/meta && git rev-parse HEAD > "/tmp/meta/${{ matrix.image }}.sha"
+
       - uses: docker/setup-buildx-action@v3
+
       - uses: docker/login-action@v3
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Build and push by digest
         id: build
         uses: docker/build-push-action@v6
@@ -73,8 +79,10 @@ jobs:
           context: .
           platforms: linux/${{ matrix.platform.arch }}
           outputs: type=image,name=${{ needs.prep.outputs.ns }}/${{ matrix.image }},push-by-digest=true,name-canonical=true,push=true
+
       - name: Save digest
         run: echo "${{ steps.build.outputs.digest }}" > "/tmp/meta/${{ matrix.image }}.${{ matrix.platform.arch }}.digest"
+
       - uses: actions/upload-artifact@v4
         with:
           name: meta-${{ matrix.image }}-${{ matrix.platform.arch }}
@@ -92,12 +100,15 @@ jobs:
           pattern: meta-*
           path: /tmp/meta
           merge-multiple: true
+
       - uses: docker/setup-buildx-action@v3
+
       - uses: docker/login-action@v3
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Create multi-arch manifests
         run: |
           set -e
@@ -108,6 +119,7 @@ jobs:
               "$NS/$image@$(cat /tmp/meta/$image.amd64.digest)" \
               "$NS/$image@$(cat /tmp/meta/$image.arm64.digest)"
           done
+
       - name: Write bundle manifest
         run: |
           {
@@ -117,6 +129,7 @@ jobs:
             echo "b1app=$(cat /tmp/meta/b1-app.sha)"
           } > bundle.txt
           cat bundle.txt
+
       - name: GitHub release
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -125,3 +138,4 @@ jobs:
             --repo "${{ github.repository }}" --target "${{ github.sha }}" \
             --title "Self-host ${{ inputs.version }}" \
             --notes "Images: $NS/b1-api, b1-admin, b1-app tagged ${{ inputs.version }}$([ "${{ inputs.promote }}" = "true" ] && echo ' and stable'). Upgrade with: ./deploy/b1 upgrade ${{ inputs.version }}"
+```
