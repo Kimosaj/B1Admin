@@ -282,6 +282,7 @@
       "unauthorizedDelete": "Unauthorized to delete calendars"
     },
     "calendarEvent": {
+      "allDates": "All dates",
       "cancel": "Cancel",
       "confirmDelete": "Are you sure you wish to delete this event?",
       "confirmDeleteSeries": "This is a recurring event. Deleting it will remove the entire series and all of its occurrences. Are you sure?",
@@ -291,10 +292,14 @@
       "delete": "Delete",
       "edit": "Edit",
       "editEvent": "Edit Event",
+      "justThisDate": "Just this date",
       "manageRegistrations": "Manage Registrations",
       "noGroups": "No groups found.",
       "notesSuffix": " Notes",
-      "removeFromCalendar": "Remove from Calendar"
+      "recurringDeleteTitle": "Delete Recurring Event",
+      "recurringEditTitle": "Edit Recurring Event",
+      "removeFromCalendar": "Remove from Calendar",
+      "thisAndFollowing": "This and all following dates"
     },
     "calendarList": {
       "aboutParagraph1": "Calendars allow you to organize and display events for your church.",
@@ -363,6 +368,8 @@
       "push": "Push",
       "sendNow": "Send now",
       "sentNow": "Sent to {count} people",
+      "sentNowTexts": "Sent to {count} people · {texts} texted, {skipped} skipped",
+      "skippedHint": "Skipped people have Text messages off, no mobile number, or replied STOP.",
       "text": "Text",
       "textHint": "Texts go out through your church's texting provider, only to people who turned on text reminders. Each text may cost your church.",
       "timeOfDay": "Time of day",
@@ -421,6 +428,7 @@
       "weekly": "Weekly"
     },
     "rooms": {
+      "active": "Active",
       "addBlockout": "Add Blockout",
       "addResource": "Add Resource",
       "addRoom": "Add Room",
@@ -445,6 +453,7 @@
       "eventDescription": "Event Description",
       "eventTitle": "Event Title",
       "find": "Find",
+      "inactive": "Inactive",
       "noApprovalNeeded": "No approval needed",
       "noBlockouts": "No blockouts yet",
       "noBlockoutsDesc": "Block out dates when rooms or resources are unavailable.",
@@ -2428,6 +2437,11 @@
       "status": "Status",
       "submitted": "Submitted",
       "text": "Text",
+      "textReminders": "Text reminders",
+      "textRemindersOff": "Off",
+      "textRemindersOn": "On",
+      "turnOff": "Turn off",
+      "turnOn": "Turn on",
       "waitlisted": "Waitlisted",
       "weekAttended": "Week of {date}: attended",
       "weekNoRecord": "Week of {date}: no attendance recorded",
@@ -6323,6 +6337,8 @@
       "saved": "Saved",
       "sendNow": "Send now",
       "sentNow": "Sent to {count} people",
+      "sentNowTexts": "Sent to {count} people · {texts} texted, {skipped} skipped",
+      "skippedHint": "Skipped people have Text messages off, no mobile number, or replied STOP.",
       "text": "Text",
       "textHint": "Texts go out through your church's texting provider, only to people who turned on text reminders. Each text may cost your church.",
       "timeOfDay": "Time of Day",
