@@ -18,7 +18,7 @@
             "permissionPlans": "Pläne",
             "promptAccess": "Möchten Sie auf die folgenden Daten von {churchName} in der oben genannten Anwendung zugreifen?",
             "completingAuth": "Authentifizierung wird abgeschlossen...",
-            "returnTo": "Zurück zu {name}",
+            "returnTo": "Nach Ihrer Auswahl werden Sie zurück zu {host} geleitet.",
             "scopes": {
                 "all": "Alle angeforderten Berechtigungen"
             },
@@ -346,9 +346,8 @@
             "title": "Erinnerungen",
             "when": "Wann (bis zu 3)",
             "who": "Wer",
-            "": "Weitere Optionen",
-            "previewNext": "Nächste Erinnerung anzeigen",
-            "previewRecipients": "Empfänger anzeigen",
+            "previewNext": "Nächste: {times}",
+            "previewRecipients": "~{count} Personen werden erinnert",
             "sendNow": "Jetzt senden"
         },
         "importIcs": {
@@ -513,10 +512,7 @@
             "showingDefault": "{{count}} beliebte Symbole werden angezeigt",
             "showingMatching": "Es werden {{count}} Symbole angezeigt, die mit „{{searchText}}“ übereinstimmen.",
             "title": "Wählen Sie Symbol",
-            "tryDifferent": "Versuchen Sie es mit einem anderen Suchbegriff",
-            "icons": {
-                "${iconName}": "${iconName}"
-            }
+            "tryDifferent": "Versuchen Sie es mit einem anderen Suchbegriff"
         },
         "labels": "Labels",
         "left": "Links",
@@ -726,18 +722,14 @@
         },
         "sunday": {
             "firstTime": "Erste Zeit",
-            "firstTimeLastSunday": "Erstes Mal am letzten Sonntag",
             "inTheRoom": "im Raum",
-            "lastSunday": "Letzter Sonntag",
             "live": "Live",
-            "liveHint": "Wer letzten Sonntag im Raum war und neue Haushalte werden hier die ganze Woche über angezeigt.",
+            "liveHint": "Wer am letzten {day} im Raum war und neue Haushalte werden hier die ganze Woche über angezeigt.",
             "liveHintSunday": "Wer im Raum ist, wer mitarbeitet und wer gerade angekommen ist, wird hier angezeigt, sobald Check-in und Mitarbeitereinsatz genutzt werden.",
             "noOrder": "Kein Dienstablauf für diesen Plan vorhanden.",
             "noPlan": "Kein Gottesdienst geplant diese Woche.",
             "rooms": "Räume",
-            "servingSunday": "Gottesdienst am Sonntag",
             "servingThisHour": "Dienst in dieser Stunde",
-            "thisSunday": "Dieser Sonntag",
             "thisWeeksService": "Der Gottesdienst dieser Woche wird hier zu sehen sein.",
             "firstTimeLastDay": "Zum ersten Mal am letzten {day}",
             "lastDay": "Letzter {day}",
@@ -958,7 +950,7 @@
             "statements": "Spendenbescheinigungen",
             "summary": "Zusammenfassung",
             "total": "Gesamt",
-            "enteredBy": "Erfasst von",
+            "enteredBy": "Erfasst von {name}",
             "memo": "Verwendungszweck",
             "receipt": "Quittung"
         },
@@ -1176,7 +1168,7 @@
             "title": "Spenden aus CSV-Datei importieren"
         },
         "receiptPage": {
-            "annualStatementTitle": "Jährliche Spendenbescheinigung {year}",
+            "annualStatementTitle": "Spendenquittung",
             "campaign": "Kampagne",
             "contributionDetails": "Spendendetails",
             "disclaimer": "{churchName} ist eine gemeinnützige Organisation. Für diese Zuwendungen wurden keine Waren oder Dienstleistungen erbracht, abgesehen von immateriellen religiösen Leistungen.",
@@ -1187,9 +1179,9 @@
             "issued": "Ausgestellt:",
             "memo": "Verwendungszweck",
             "noteLabel": "Hinweis:",
-            "noteText": "Diese Bescheinigung fasst alle Zuwendungen zusammen, die {churchName} im Jahr {year} erhalten hat.",
+            "noteText": "Diese Quittung bestätigt eine Zuwendung, die {churchName} am {date} erhalten hat.",
             "organization": "Organisation",
-            "period": "Zeitraum: 1. Jan. – 31. Dez. {year}",
+            "period": "Datum: {date}",
             "pledgeProgress": "Fortschritt der Zusage",
             "pledged": "Zugesagt",
             "statementSummary": "Zusammenfassung der Bescheinigung",
@@ -1376,8 +1368,7 @@
             "meetingTime": "Treffzeit",
             "memberCount": "Mitgliederzahl",
             "name": "Name",
-            "tags": "Tags",
-            "": "Weitere Optionen"
+            "tags": "Tags"
         },
         "groupAdd": {
             "add": "Hinzufügen",
@@ -1435,7 +1426,6 @@
             "skippedDates": "Übersprungene Daten",
             "until": "bis",
             "past": "Vergangen",
-            "response_${resp}": "${resp}",
             "upcoming": "Bevorstehend"
         },
         "groupDetails": {
@@ -1773,7 +1763,7 @@
             "declineHelp": "Geben Sie optional einen Grund für die Ablehnung an.",
             "declineTitle": "Beitrittsanfrage ablehnen",
             "reason": "Grund",
-            "title": "Ausstehende Anfragen"
+            "title": "Ausstehende Anfragen ({count})"
         },
         "sendNotificationDialog": {
             "audience": "Zielgruppe",
@@ -1828,7 +1818,7 @@
             "month": ": Monat",
             "startsWith": "beginnt mit",
             "yearsSince": "Jahre seit ",
-            "lapsedGiver": "Spender, der seit längerer Zeit nicht mehr gespendet hat"
+            "lapsedGiver": "Hat in {minWeeks} der letzten {regularWeeks} Wochen gespendet, dann {lapsedWeeks} Wochen lang nichts"
         },
         "pageHelper": {
             "bible": "Bibel",
@@ -2012,7 +2002,7 @@
             "search": "Suchen",
             "valuePlaceholder": "Wert",
             "daysPlaceholder": "Anzahl der Tage",
-            "lastDays": "Letzte {count} Tage"
+            "lastDays": "in den letzten N Tagen"
         },
         "aiSearch": {
             "clearSearch": "Suche löschen",
@@ -2171,8 +2161,7 @@
             "photo": "Foto",
             "photoUpdated": "Foto aktualisiert",
             "state": "Bundesland/Provinz",
-            "workPhone": "Telefon geschäftlich",
-            "": "Weitere Optionen"
+            "workPhone": "Telefon geschäftlich"
         },
         "gdprActions": {
             "anonymize": "Anonymisieren",
@@ -2190,7 +2179,7 @@
             "leader": "Leiter",
             "notMemMsg": "Derzeit kein Mitglied einer Gruppe.",
             "unknownGroup": "Unbekannte Gruppe",
-            "joined": "Beigetreten am"
+            "joined": "Beigetreten am {date}"
         },
         "household": {
             "house": " Haushalt"
@@ -2205,8 +2194,7 @@
             "householdNameAria": "Haushaltsname",
             "other": "Andere",
             "spouse": "Ehepartner",
-            "useAddress": "Soll die Adresse von {first} ({address}) für den Haushalt von {current} verwendet werden?",
-            "": "Weitere Optionen"
+            "useAddress": "Soll die Adresse von {first} ({address}) für den Haushalt von {current} verwendet werden?"
         },
         "lists": {
             "autoRefresh": "Nächtlich aktualisieren",
@@ -2334,7 +2322,7 @@
             "editAria": "{name} bearbeiten",
             "form": "Formular",
             "notFilledOut": "Noch nicht ausgefüllt.",
-            "submittedOn": "Eingereicht am"
+            "submittedOn": "Eingereicht am {date}"
         },
         "personNavigation": {
             "attendance": "Anwesenheit",
@@ -2402,7 +2390,7 @@
             "home": "Zuhause",
             "mobile": "Mobil",
             "work": "Arbeit",
-            "dateAdded": "Hinzugefügt am"
+            "dateAdded": "Hinzugefügt am {date}"
         },
         "pickup": {
             "add": "Hinzufügen",
@@ -2420,8 +2408,7 @@
             "update": "Adresse aktualisieren"
         },
         "notesPage": {
-            "": "Weitere Optionen",
-            "author": "Autor",
+            "author": "Von {name}",
             "confidential": "Vertraulich",
             "loadMore": "Weitere laden",
             "subtitle": "Notizen zu dieser Person",
@@ -2797,8 +2784,6 @@
             "planNameAria": "Planname",
             "planReq": "Planname ist erforderlich.",
             "prepared": "Vorläufig eingeplant (Zuweisungen vor Veröffentlichung für Freiwillige ausblenden)",
-            "repeatWeekly": "Wöchentlich für so viele Wochen wiederholen",
-            "repeatWeeklyHelper": "Erstellt einen Plan pro Woche, jeweils kopiert vom vorherigen",
             "servDate": "Dienstdatum",
             "servReq": "Dienstdatum ist erforderlich.",
             "serviceDateAria": "Servicedatum",
@@ -2926,8 +2911,7 @@
             "timeFilter": {
                 "both": "Vergangene und bevorstehende Pläne",
                 "future": "Nur bevorstehende Pläne",
-                "past": "Nur vergangene Pläne",
-                "${filter}": "${filter}"
+                "past": "Nur vergangene Pläne"
             }
         },
         "planTypeList": {
@@ -3186,44 +3170,22 @@
             "to": "Bis",
             "unavailable": "Nicht verfügbar"
         },
-        "confirmation": {
-            "awaitingResponse": "Warten auf Rückmeldung",
-            "cardHelp": "Diese Karte verfolgt eine einzelne Dienstanfrage. Wenn Sie eine Nachfassaktion als erledigt markieren, bleibt die Anfrage geöffnet und zugewiesen, bis der Freiwillige antwortet oder der Zeitraum für die Nachverfolgung endet.",
-            "configureHelp": "Wählen Sie diesen Workflow in einem Dienstplan aus.",
-            "dueDays": "Aufgabe fällig in (Tagen)",
-            "email": "E-Mail",
-            "enabled": "Für neue Anfragen wird der Bestätigungs-Workflow verwendet. App-Benachrichtigungen bleiben aktiviert. Nachfassaktionen enden, sobald eine Anfrage angenommen oder abgelehnt wurde.",
-            "followupDone": "Nachfassaktion als erledigt markieren",
-            "help": "Erstellen Sie unter „Dienst > Workflows“ einen Workflow zur Bestätigung von Diensteinsätzen und wählen Sie ihn anschließend hier aus. Durch das Veröffentlichen und Benachrichtigen wird für jede neue Anfrage eine Karte erstellt. Angenommene Anfragen erhalten Diensterinnerungen; unbeantwortete Anfragen werden über diesen Workflow bearbeitet.",
-            "issueError": "Die Anfragen konnten nicht versendet werden. Prüfen Sie, ob der ausgewählte Workflow aktiv und der Plan veröffentlicht ist, und versuchen Sie es erneut.",
-            "kind": "Zweck des Workflows",
-            "message": "Anfragenachricht",
-            "messageHelp": "Enthält die Rolle, den Plan, das Dienstdatum und einen Antwortlink. Verwenden Sie {{planName}}, {{positionName}} und {{serviceDate}} in Ihrer Nachricht. Bei leerem Feld wird die Standardanfrage verwendet.",
-            "none": "Vorhandene Zuweisungsbenachrichtigungen verwenden",
-            "people": "Nachverfolgung durch Mitarbeiter",
-            "preferences": "Es gelten die Mitgliedereinstellungen, die SMS-Einwilligung, die Anbieterkonfiguration und die E-Mail-Versandfreigabe der Gemeinde. Übersprungene oder blockierte Versuche werden auf der Karte dokumentiert.",
-            "purpose": "Bestätigung einer Diensteinteilung",
-            "text": "SMS-Nachricht",
-            "triggerHelp": "Dieser Workflow startet, wenn aus einem veröffentlichten Plan neue Diensteinsatzanfragen versendet werden. Wählen Sie ihn in den Planeinstellungen aus und verwenden Sie anschließend „Veröffentlichen / Benachrichtigen“. Für jeden Einsatz wird eine eigene Karte erstellt; eine Antwort schließt nur die jeweilige Anfrage.",
-            "unavailable": "Der ausgewählte Workflow ist nicht verfügbar.",
-            "workflow": "Bestätigungs-Workflow"
-        },
         "lessonTrim": {
-            "alsoTrimUpcoming": "Auch zukünftige Lektionen kürzen",
+            "alsoTrimUpcoming": "Auch die {} bereits geplanten kommenden Lektionen kürzen",
             "alsoTrimUpcomingOne": "Auch die nächste Lektion kürzen",
             "clear": "Zurücksetzen",
             "dismiss": "Schließen",
             "error": "Beim Kürzen der Lektion ist ein Fehler aufgetreten.",
-            "help": "Wählen Sie aus, welche Teile der Lektion beibehalten werden sollen.",
+            "help": "Jede in {} geplante Lektion wird auf diese Teile gekürzt. Teile werden anhand des Namens zugeordnet; ein Teil in einem Abschnitt, der jede Woche umbenannt wird, wird anhand seiner Position im Abschnitt beibehalten.",
             "keeps": "Wird beibehalten",
             "nothingToSave": "Keine Änderungen zum Speichern.",
-            "partIn": "Teil in",
+            "partIn": "{} in {}",
             "replacesOrder": "Ersetzt den Ablauf",
-            "saved": "Änderungen gespeichert",
-            "savedWithWarnings": "Mit Warnungen gespeichert",
-            "status": "Status",
+            "saved": "Lektionskürzung für {} gespeichert.",
+            "savedWithWarnings": "Lektionskürzung gespeichert. Prüfen Sie diese Pläne vor Sonntag: {}",
+            "status": "Lektionskürzung: {} Teile beibehalten, gespeichert von {} ({})",
             "title": "Lektion kürzen",
-            "warningBanner": "Achtung: Das Kürzen kann sich auf verknüpfte zukünftige Lektionen auswirken."
+            "warningBanner": "{}. Prüfen Sie den Gottesdienstablauf vor Sonntag."
         }
     },
     "profile": {
@@ -3244,7 +3206,7 @@
             "lastActiveDate": "Letztes aktives Datum",
             "registrationDate": "Anmeldedatum",
             "title": "Geräte",
-            "confirmRemove": "Möchten Sie dieses Gerät wirklich entfernen?",
+            "confirmRemove": "„{label}“ aus Ihrem Konto entfernen? Der Bildschirm benötigt einen neuen Kopplungscode, um sich erneut zu verbinden.",
             "remove": "Gerät entfernen"
         },
         "linkedAccounts": {
@@ -3784,8 +3746,7 @@
                 "generated-from-midi": "Aus MIDI generiert",
                 "lyrics-only": "Nur Liedtext",
                 "proofread-score": "Korrektur gelesenes Notenblatt",
-                "sunday-ready": "Für Sonntag bereit",
-                "${c}": "${c}"
+                "sunday-ready": "Für Sonntag bereit"
             },
             "confirmApprove": "Diese Einreichung genehmigen?",
             "confirmApproveDetail": "{name} unter {license} veröffentlichen. Kirchen können es sofort verwenden.",
@@ -3986,8 +3947,7 @@
             "subtitle": "Deployments ändern die Datenbank nicht. Führen Sie nach einem Release, das eine Migration hinzufügt, diese hier aus – die API wendet sie aus ihrem eigenen Netzwerk heraus an.",
             "title": "Datenbankmigrationen",
             "upToDate": "Aktuell",
-            "willRerun": "Wird erneut ausgeführt",
-            "state_": "Status"
+            "willRerun": "Wird erneut ausgeführt"
         },
         "reportPage": {
             "adminOnly": "Nur Administrator",
@@ -4118,7 +4078,7 @@
             "title": "App-Registerkarten",
             "untitled": "Ohne Titel",
             "folderOneTab": "Ordner mit einem Tab",
-            "folderTabs": "Ordner mit mehreren Tabs"
+            "folderTabs": "Ordner · {} Tabs"
         },
         "appThemeEdit": {
             "background": "Hintergrund",
@@ -4233,8 +4193,7 @@
             "kioskLink": "Check-in-Kiosk, QR-Codes und Etiketten",
             "ratioEnforcement": "Durchsetzung des Freiwilligenverhältnisses",
             "title": "Check-in",
-            "warn": "Warnen (mit Bestätigung zulassen)",
-            "": "Weitere Optionen"
+            "warn": "Warnen (mit Bestätigung zulassen)"
         },
         "churchSettingsEdit": {
             "address1": "Adresszeile 1",
@@ -4378,7 +4337,7 @@
             "clientSecret": "Client-Geheimnis",
             "copyWebhookUrl": "Webhook-URL kopieren",
             "currency": "Währung",
-            "currencyHelper": "Stellen Sie sicher, dass diese Währung auch in Ihrem Stripe-Dashboard aktiviert ist. Aktivieren Sie die Währung hier:",
+            "currencyHelper": "Stellen Sie sicher, dass diese Währung auch in Ihrem {provider}-Dashboard aktiviert ist. Aktivieren Sie die Währung hier:",
             "feesAndStatementsSection": "Gebühren & Abrechnungen",
             "forceMsg": "Erzwingt automatisch, dass Benutzer die Transaktionsgebühren übernehmen",
             "giving": "Spenden",
@@ -4494,7 +4453,7 @@
         "rolePermissions": {
             "filter": "Berechtigungen filtern",
             "permEdit": "Berechtigungen bearbeiten",
-            "countOf": "Anzahl von"
+            "countOf": "{checked} von {total}"
         },
         "roles": {
             "acc": "Buchhaltung",
@@ -4541,7 +4500,7 @@
             "memberYearsAll": "Alle Mitgliedsjahre",
             "memberYearsHelper": "Legen Sie fest, ob die Dauer der Mitgliedschaft auf der Bescheinigung erscheint.",
             "memberYearsOff": "Nicht anzeigen",
-            "memberYearsThrough": "Mitglied seit"
+            "memberYearsThrough": "Bis {}"
         },
         "storageSettingsEdit": {
             "authFailed": "Authentifizierung fehlgeschlagen",
@@ -4732,8 +4691,7 @@
             "summaryErrors": "{count} Fehler",
             "summaryWarnings": "{count} Warnungen",
             "title": "Barrierefreiheit",
-            "warningLabel": "Warnung",
-            "": "Weitere Optionen"
+            "warningLabel": "Warnung"
         },
         "addPage": {
             "aiPlaceholder": "Beispiel: Erstellen Sie eine einladende Homepage mit unserem Kirchennamen, Leitbild, Gottesdienstzeiten und einem Spendenbutton",
@@ -4780,8 +4738,7 @@
             "preset_warmer": "Mache es herzlicher und einladender.",
             "rewrite": "Umschreiben",
             "title": "AI Umschreiben",
-            "working": "Schreibe Abschnitt um...",
-            "preset_": "Vorlage"
+            "working": "Schreibe Abschnitt um..."
         },
         "animations": {
             "colorize": "Einfärben",
@@ -4871,7 +4828,6 @@
             "subtitle": "Blogbeiträge für Ihre Website erstellen und verwalten",
             "title": "Blog",
             "view": "Auf der Website ansehen",
-            "": "Weitere Optionen",
             "footerDesc": "Beschreibung im Blog-Fußbereich",
             "footerLabel": "Beschriftung im Fußbereich",
             "footerTitle": "Titel im Fußbereich"
@@ -5337,9 +5293,7 @@
             "tone_casual": "Locker",
             "tone_formal": "Förmlich",
             "tone_inspirational": "Inspirierend",
-            "tone_warm": "Herzlich",
-            "audience_": "Zielgruppe",
-            "tone_": "Ton"
+            "tone_warm": "Herzlich"
         },
         "helpDialog": {
             "addBody": "Klicken Sie in der Symbolleiste auf Inhalt hinzufügen, dann ziehen Sie einen Abschnitt oder ein Element auf die Seite.",
@@ -5632,7 +5586,6 @@
             "duplicate": "Duplizieren",
             "duplicateSection": "Abschnitt duplizieren",
             "id": "ID",
-            "divider_": "Trenner",
             "saveError": "Der Abschnitt konnte nicht gespeichert werden."
         },
         "sectionTemplates": {
@@ -5646,8 +5599,7 @@
                 "hero": "Hero",
                 "media": "Medien",
                 "people": "Personen",
-                "services": "Gottesdienste",
-                "": "Weitere Optionen"
+                "services": "Gottesdienste"
             },
             "connectColumns": "Kontakt",
             "ctaBanner": "Handlungsaufforderung",
@@ -5672,8 +5624,7 @@
             "title": "Abschnittslayout auswählen",
             "verseBanner": "Bibelvers-Banner",
             "watchOnline": "Online ansehen",
-            "welcome": "Willkommen",
-            "": "Weitere Optionen"
+            "welcome": "Willkommen"
         },
         "sectionToolbar": {
             "aiRewrite": "KI-Überarbeitung",
@@ -5748,8 +5699,7 @@
                 "home": "Startseite",
                 "visit": "Besuch planen"
             },
-            "title": "Mit einer Vorlage starten",
-            "": "Weitere Optionen"
+            "title": "Mit einer Vorlage starten"
         },
         "siteWidgets": {
             "addAction": "Aktion hinzufügen",
@@ -5801,7 +5751,6 @@
             "vimeo": "Vimeo",
             "x": "X",
             "youtube": "YouTube",
-            "": "Weitere Optionen",
             "whatsappPlaceholder": "WhatsApp-Link"
         },
         "spacingScaleEdit": {
@@ -6243,8 +6192,7 @@
             "subtitle": "Einen Workflow automatisch starten, wenn ein Datensatz hinzugefügt, geändert oder entfernt wird — einschließlich Formulareinreichungen.",
             "title": "Auslöser",
             "value": "Wert",
-            "allowRepeatAfterClose": "Wiederholung nach Abschluss zulassen",
-            "recur_": "Wiederkehrend"
+            "allowRepeatAfterClose": "Wiederholung nach Abschluss zulassen"
         },
         "executions": {
             "attempts": "Versuche",
@@ -6262,8 +6210,7 @@
             "subject": "Person",
             "title": "Ausführungsverlauf",
             "trigger": "Auslöser",
-            "when": "Wann",
-            "status_": "Status"
+            "when": "Wann"
         },
         "groupJoinRequest": {
             "approve": "Genehmigen",
@@ -6292,7 +6239,6 @@
             "assignPers": "Bitte weisen Sie diese Aufgabe einer Person zu.",
             "assignTo": "Zuweisen an",
             "assignToAria": "Zuweisen an",
-            "associatePers": "Bitte verknüpfen Sie diese Aufgabe mit einer Person.",
             "associateW": "Verknüpfen mit",
             "associateWithAria": "Verknüpfen mit",
             "newAssign": "Neue Aufgabe",
@@ -6324,8 +6270,7 @@
             "textHint": "SMS werden über den SMS-Anbieter Ihrer Gemeinde nur an Personen gesendet, die SMS-Erinnerungen aktiviert haben. Jede SMS kann Ihrer Gemeinde Kosten verursachen.",
             "timeOfDay": "Uhrzeit",
             "title": "Erinnerungen",
-            "when": "Wann sollen Erinnerungen gesendet werden?",
-            "": "Weitere Optionen"
+            "when": "Wann sollen Erinnerungen gesendet werden?"
         },
         "requestedChanges": {
             "applied": "Änderungen übernommen",
@@ -6400,7 +6345,7 @@
             "subjectOverride": "Betreff (optional)",
             "taskDescription": "Beschreibung (optional)",
             "taskTitle": "Aufgabentitel",
-            "textMergeHint": "Verwende {{firstName}}, {{lastName}}, {{displayName}} oder {{churchName}}. Abgemeldete Personen werden übersprungen.",
+            "textMergeHint": "Klicken Sie unten auf ein Feld, um es einzufügen. Abgemeldete Personen werden übersprungen.",
             "textMessage": "SMS-Nachricht",
             "title": "Automatisierte Aktionen",
             "type": {
@@ -6413,8 +6358,7 @@
                 "sendEmail": "E-Mail senden",
                 "sendText": "SMS senden",
                 "setField": "Feld festlegen",
-                "webhook": "Webhook aufrufen",
-                "": "Weitere Optionen"
+                "webhook": "Webhook aufrufen"
             },
             "value": "Wert",
             "webhookUrl": "Webhook-URL (https)",
@@ -6532,24 +6476,6 @@
             "thenNothing": "Andernfalls keine Aktion ausführen.",
             "weeks": "Wochen",
             "weeksLower": "Wochen"
-        }
-    },
-    "${labelPrefix}": {
-        "ariaSend": "Nachricht senden",
-        "errorAnswer": "Darauf konnte keine Antwort gefunden werden.",
-        "errorGeneric": "Es ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.",
-        "placeholderInput": "Nachricht eingeben..."
-    },
-    "eventCalendar": {
-        "recurring": {
-            "day": {
-                "": "Weitere Optionen"
-            },
-            "monthlyOnDay": "Monatlich am {day}.",
-            "monthlyOnNth": "Monatlich am {ordinal} {day}.",
-            "ordinal": {
-                "": "Weitere Optionen"
-            }
         }
     }
 }
